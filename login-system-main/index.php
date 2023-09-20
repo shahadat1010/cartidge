@@ -22,6 +22,7 @@
                     ?>
                     <script>
                         alert("login in successfully");
+                        window.location.href = "https://www.ccheadstampguide.com/";
                     </script>
                     <?php
                 }else{
