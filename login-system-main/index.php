@@ -1,12 +1,18 @@
 <?php
     include('connect/connection.php');
 
+
     if(isset($_POST["login"])){
         $email = mysqli_real_escape_string($connect, trim($_POST['email']));
         $password = trim($_POST['password']);
 
+        echo $email;
+
         $sql = mysqli_query($connect, "SELECT * FROM login where email = '$email'");
         $count = mysqli_num_rows($sql);
+
+        echo $sql;
+        echo $count;
 
             if($count > 0){
                 $fetch = mysqli_fetch_assoc($sql);
@@ -19,6 +25,10 @@
                     </script>
                     <?php
                 }else if(password_verify($password, $hashpassword)){
+
+                    $_SESSION['email'] = $email;
+                    header('location:dashboard.php');
+
                     ?>
                     <script>
                         alert("login in successfully");

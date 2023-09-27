@@ -1,8 +1,8 @@
 <?php 
 
-$dbServername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
+$dbServername = "cartridgecornercom.ipagemysql.com";
+$dbUsername = "cartridgecorner";
+$dbPassword = "Crazyhorse1314?";
 $dbName = "loginsystem";
 
 $connect = new mysqli($dbServername, $dbUsername, $dbPassword, $dbName);
